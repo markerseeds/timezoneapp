@@ -15,14 +15,23 @@ import {
 } from "../../styledComponent/index";
 import { timeZones } from "../../constant/index";
 
+type dataObject = {
+  id: number
+  name: string,
+  date: string,
+  time: string,
+  timezone: string
+}
+
 const FormModal: FunctionComponent<{
-  onModalSubmit(data);
+  onModalSubmit(data : dataObject);
   openModal();
   modalState: boolean;
   dateRange: number;
 }> = (props) => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
+
+  const onSubmit = (data : dataObject) => {
     if (data.name && data.date && data.time && data.timezone) {
       data.id = Math.random();
       data.time = data.time.padStart(5, "0");

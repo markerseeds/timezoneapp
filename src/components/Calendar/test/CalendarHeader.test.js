@@ -1,6 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import CalendarHeader from "../CalendarHeader";
-import Calendar from "../Calendar";
 
 export const yearOptions = ["2021", "2022", "2023", "2024"];
 

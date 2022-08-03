@@ -10,8 +10,8 @@ import {
 import { yearOptions, monthOptions } from "../../constant/index";
 
 const CalenderHeader: FunctionComponent<{
-  onYearSelect(date) : void;
-  onMonthSelect(date);
+  onYearSelect(date : string) : void;
+  onMonthSelect(date : string) : void;
   openModal();
   defaultYear: string;
   defaultMonth: string;
@@ -25,6 +25,7 @@ const CalenderHeader: FunctionComponent<{
     props.onMonthSelect(date);
   };
 
+  // header timezone selection
   // const onTimezoneSelect = (timezone) => {
   //   props.onTimezoneSelect(timezone);
   // };

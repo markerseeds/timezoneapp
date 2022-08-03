@@ -5,16 +5,15 @@ import Calendar from "../Calendar";
 import React, { useState as useStateMock } from "react";
 import reducer from "../../../store/reducers/scheduleReducer";
 
-jest.mock("react", () => ({
-  ...jest.requireActual("react"),
-  useState: jest.fn(),
-}));
-
 describe("testing useState mocked", () => {
-  const setState = jest.fn();
-  const useStateMock = (initState = true) => [initState, setState];
+  const mockSetState = jest.fn();
 
-  jest.spyOn(React, "useState").mockImplementation(useStateMock);
+  beforeEach(() => {
+    jest.mock('react', () => ({
+      ...jest.requireActual('react'),
+      useState: (initialState) => [initialState, mockSetState]
+    }))
+  })
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -30,6 +29,6 @@ describe("testing useState mocked", () => {
   };
 
   test("should handle year click", () => {
-    // renderWithRedux(<Calendar />)
+    renderWithRedux(<Calendar />)
   });
 });

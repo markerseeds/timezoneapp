@@ -15,7 +15,7 @@ const renderWithRedux = (
   };
 };
 
-const userData = {
+const mockUserData = {
   date: '2022-7-12',
   time: '07:00',
   data: {
@@ -41,6 +41,6 @@ describe("CalendarBody Component", () => {
   });
 
   test("should render draggable component with data", () => {
-    renderWithRedux(<CalendarBody userData={userData} date={date} />);
+    renderWithRedux(<CalendarBody userData={mockUserData} date={date} />);
   });
 });

@@ -84,12 +84,12 @@ const Calendar : FunctionComponent = () => {
    
     let sourceTime = moment.tz(timestamp, data.timezone);
     let convertedTime = sourceTime.tz(selectedTimezone);
-    let convertedMonth = moment(convertedTime, "YYYY-M-D hh:mm").month();
-    let convertedDay = moment(convertedTime, "YYYY-M-D hh:mm").date();
-    let convertedYear = moment(convertedTime, "YYYY-M-D hh:mm").year();
+    let convertedMonth = moment(convertedTime, "YYYY-M-D HH:mm").month();
+    let convertedDay = moment(convertedTime, "YYYY-M-D HH:mm").date();
+    let convertedYear = moment(convertedTime, "YYYY-M-D HH:mm").year();
 
     const newDate = convertedYear + "-" + (convertedMonth + 1) + "-" + convertedDay;
-    data.time = (convertedTime.format("YYYY-M-D hh:mm").split(' '))[1];
+    data.time = (convertedTime.format("YYYY-M-D HH:mm").split(' '))[1];
 
     const dataByDate: {
       date: string;
@@ -97,7 +97,7 @@ const Calendar : FunctionComponent = () => {
       data: object;
     } = {
       date: newDate,
-      time: (convertedTime.format("YYYY-M-D hh:mm").split(' '))[1],
+      time: (convertedTime.format("YYYY-M-D HH:mm").split(' '))[1],
       data: data,
     };
 

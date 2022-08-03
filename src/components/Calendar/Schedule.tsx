@@ -10,7 +10,7 @@ const Schedule : FunctionComponent<{id: number, name: string, time: string}> = (
   const dispatch = useDispatch();
   const { deleteSchedule } = bindActionCreators(actionCreators, dispatch);
 
-  const deleteHandler = () => {
+  const deleteHandler : () => void = () => {
     deleteSchedule(props.id);
   };
 
